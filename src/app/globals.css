@@ -18,10 +18,35 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-gradient-to-r from-blackColor to-primaryDarkColor text-textColor;
+  /* font-family: 'Courier Prime', monospace; */
+  font-family: 'Serif', monospace !important;
+}
+
+a{
+  @apply hover:bg-primaryDarkColorLighter hover:border-borderColor;
+}
+
+a:hover{
+  background-color: #1C2D4E !important;
+  border-color: #76D3FC !important;
+}
+.status{
+  @apply rounded-3xl px-7 py-1 bg-activeColor text-4xl font-bold tracking-tight border-2 border-activeBorderColor;
+}
+
+.btn{
+  @apply py-2 px-4 bg-primaryDarkColorLighter border-2 border-btnBorder h-min rounded-md; 
+}
+
+.cmd{
+  @apply pl-2 h-full bg-primaryDarkColorLighterTrans border-2 border-primaryDarkColorLighter text-white flex flex-col justify-end
+}
+
+.connected{
+  @apply border-2 border-activeBorderColor bg-activeColor font-bold text-activeBorderColor;
+}
+
+.disabled{
+  @apply opacity-50; 
 }
