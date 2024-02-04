@@ -10,8 +10,11 @@ import {
     HomeIcon,
     UsersIcon,
     XMarkIcon,
+    LinkIcon,
+    Cog6ToothIcon,
+    RssIcon
 } from '@heroicons/react/24/outline';
-import './globals.css'
+import '../globals.css'
 type NavigationItem = {
     name: string;
     href: string;
@@ -29,19 +32,16 @@ type Team = {
 
 const navigation: NavigationItem[] = [
     { name: 'Статус', href: '/status', icon: HomeIcon, current: false },
-    { name: 'Керування', href: '/manage', icon: UsersIcon, current: false },
-    { name: 'Перевiрка IP', href: '/check', icon: FolderIcon, current: false },
+    { name: 'Керування', href: '/manage', icon: Cog6ToothIcon, current: false },
+    { name: 'Перевiрка IP', href: '/check', icon: RssIcon, current: false },
+    { name: 'Створити сервер', href: '/createServ', icon: LinkIcon, current: false },
 ];
 
 function classNames(...classes: (string | boolean)[]): string {
     return classes.filter(Boolean).join(' ');
 }
 
-export default function Sidebar({
-    children
-}: {
-    children: React.ReactNode
-}) {
+export default function Sidebar() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     return (
@@ -105,8 +105,6 @@ export default function Sidebar({
                                                 </li>
                                             ))}
                                         </ul>
-
-
                                     </nav>
                                 </div>
                             </Dialog.Panel>
@@ -144,10 +142,10 @@ export default function Sidebar({
                                     ))}
                                 </ul>
                             </li>
-                            <li className='h-1/3 p-2'>
+                            {/* <li className='h-1/3 p-2'>
                                 <div className="cmd">
                                 </div>
-                            </li>
+                            </li> */}
                         </ul>
                     </nav>
                 </div>

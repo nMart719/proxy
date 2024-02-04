@@ -18,7 +18,8 @@ const config: Config = {
         'activeColor': 'rgba(39,249,150,0.2)',
         'activeBorderColor': 'rgba(39,249,150)',
         'primaryDarkColorLighterTrans' : 'rgba(28,45,78,0.3)',
-        'btnBorder' : '#566a94'
+        'btnBorder' : '#566a94',
+        'placeholderBg' : 'rgb(21,27,44)'
       },
     },
   },

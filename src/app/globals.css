@@ -32,11 +32,14 @@ a:hover{
   border-color: #76D3FC !important;
 }
 .status{
-  @apply rounded-3xl px-7 py-1 bg-activeColor text-4xl font-bold tracking-tight border-2 border-activeBorderColor;
+  @apply rounded-3xl px-7 py-1 bg-activeColor text-4xl font-semibold tracking-tight border-2 border-activeBorderColor;
 }
 
 .btn{
-  @apply py-2 px-4 bg-primaryDarkColorLighter border-2 border-btnBorder h-min rounded-md; 
+  @apply py-2 px-4 border-2 h-min rounded-md bg-textColor border-textColor text-primaryDarkColor bg-opacity-80; 
+}
+.btn-secondary{
+  @apply text-textColor bg-primaryDarkColorLighter border-btnBorder bg-opacity-100; 
 }
 
 .cmd{
@@ -49,4 +52,59 @@ a:hover{
 
 .disabled{
   @apply opacity-50; 
+}
+
+.form-control {
+  @apply relative my-2;
+  padding: 15px 0 0;
+}
+  
+  .form-control input {
+      @apply shadow text-textColor w-full text-base rounded-md p-2 border-[1px] pr-8 border-btnBorder;
+      transition: all 0.2s; 
+  }
+  .form-control input:focus {
+    @apply bg-transparent;
+}
+
+.form-control input:not(:focus) {
+    @apply !bg-primaryDarkColorLighter;
+}
+      .form-control input:not([type="submit"],[type="checkbox"],[type="radio"])::placeholder {
+          @apply text-transparent;
+      }
+
+      .form-control input:placeholder-shown ~ label {
+          @apply absolute text-textColor text-base cursor-text top-6;
+      }
+      .form-control input:placeholder-shown {
+          @apply bg-transparent;
+      }
+      .form-control input ~ label {
+          @apply absolute text-textColor text-base cursor-text top-6 left-4;
+          transition: 0.3s;
+      }
+      .form-control input:not(:focus):not(:placeholder-shown) ~ label {
+        @apply text-transparent; /* or any other style to hide the label */
+        
+        transition: 0s !important;
+    }
+      /* .form-control label,.form-control input:focus~.input-label{
+  top: 6px;
+  @apply bg-white-color text-black-color absolute py-0 px-1 block text-sm left-2;
+  transition: 0.3s;
+} */
+       .form-control input:focus ~ label {
+          top: 6px;
+          @apply bg-placeholderBg text-whiteColor absolute py-0 px-1 block text-sm left-2;
+          transition: 0.3s;
+      }
+
+
+      .form-control input:focus {
+          @apply ring-0 border-[1.5px] border-btnBorder;
+      }
+      
+.label-for-form-control{
+
 }
