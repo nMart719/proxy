@@ -19,8 +19,12 @@ const config: Config = {
         'activeBorderColor': 'rgba(39,249,150)',
         'primaryDarkColorLighterTrans' : 'rgba(28,45,78,0.3)',
         'btnBorder' : '#566a94',
-        'placeholderBg' : 'rgb(21,27,44)'
+        'placeholderBg' : 'rgb(21,27,44)',
+        'redColor' : '#FA4328'
       },
+      screens: {
+        'xs': '400px'
+      }
     },
   },
   plugins: [],

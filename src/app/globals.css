@@ -18,9 +18,10 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  @apply bg-gradient-to-r from-blackColor to-primaryDarkColor text-textColor;
+  @apply bg-gradient-to-r from-blackColor to-primaryDarkColor text-textColor tracking-tight;
   /* font-family: 'Courier Prime', monospace; */
-  font-family: 'Serif', monospace !important;
+  font-family: "Lucida Console", monospace;
+
 }
 
 a{
@@ -40,6 +41,13 @@ a:hover{
 }
 .btn-secondary{
   @apply text-textColor bg-primaryDarkColorLighter border-btnBorder bg-opacity-100; 
+}
+.btn:not(.disabled){
+  @apply  hover:bg-opacity-20 hover:text-textColor;
+}
+
+.btn-secondary:not(.disabled){
+  @apply  hover:bg-primaryDarkColorLighter hover:bg-opacity-30 hover:text-borderColor hover:border-borderColor;
 }
 
 .cmd{
@@ -105,6 +113,6 @@ a:hover{
           @apply ring-0 border-[1.5px] border-btnBorder;
       }
       
-.label-for-form-control{
-
+.description{
+  @apply mt-1 text-sm leading-6  flex items-center sm:col-span-2 sm:mt-0;
 }

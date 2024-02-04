@@ -12,7 +12,9 @@ import {
     XMarkIcon,
     LinkIcon,
     Cog6ToothIcon,
-    RssIcon
+    RssIcon,
+    GlobeAltIcon,
+    ArrowRightOnRectangleIcon
 } from '@heroicons/react/24/outline';
 import '../globals.css'
 type NavigationItem = {
@@ -31,10 +33,10 @@ type Team = {
 };
 
 const navigation: NavigationItem[] = [
-    { name: 'Статус', href: '/status', icon: HomeIcon, current: false },
-    { name: 'Керування', href: '/manage', icon: Cog6ToothIcon, current: false },
-    { name: 'Перевiрка IP', href: '/check', icon: RssIcon, current: false },
-    { name: 'Створити сервер', href: '/createServ', icon: LinkIcon, current: false },
+    { name: 'Статус', href: '/dashboard/status', icon: HomeIcon, current: false },
+    { name: 'Керування', href: '/dashboard/manage', icon: Cog6ToothIcon, current: false },
+    { name: 'Перевiрка IP', href: '/dashboard/check', icon: RssIcon, current: false },
+    { name: 'Створити сервер', href: '/dashboard/createServ', icon: GlobeAltIcon, current: false },
 ];
 
 function classNames(...classes: (string | boolean)[]): string {
@@ -81,9 +83,8 @@ export default function Sidebar() {
                                     leaveTo="opacity-0"
                                 >
                                     <div className="flex w-16 justify-center py-5 bg-blackColor">
-                                        <button type="button" className="-m-2.5 p-2.5" onClick={() => setSidebarOpen(false)}>
-                                            <span className="sr-only">Close sidebar</span>
-                                            <XMarkIcon className="h-6 w-6 " aria-hidden="true" />
+                                        <button type="button" className="-m-2.5 p-2.5 'flex-row justify-between" onClick={() => setSidebarOpen(false)}>
+                                         <XMarkIcon className="h-6 w-6 " aria-hidden="true" />
                                         </button>
                                     </div>
                                 </Transition.Child>
@@ -117,8 +118,13 @@ export default function Sidebar() {
             <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
                 {/* Sidebar component, swap this element with another sidebar if you like */}
                 <div className="flex grow flex-col gap-y-5 overflow-y-auto  px-6">
-                    <div className="flex h-16 shrink-0 items-center">
-
+                    <div className="flex flex-row h-16 shrink-0 justify-between items-end">
+                        <div className="font-bold text-3xl bg-gradient-to-b from-textColor to-borderColor text-transparent bg-clip-text">User</div>   
+                        <a href="/login" className='pb-1 hover:!bg-transparent text-textColor hover:text-borderColor '>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+                            </svg>
+                        </a>
                     </div>
                     <nav className="flex flex-1 flex-col">
                         <ul role="list" className="flex flex-1 flex-col gap-y-7 justify-between">
@@ -151,11 +157,14 @@ export default function Sidebar() {
                 </div>
             </div>
 
-            <div className="sticky top-0 z-40 flex items-center gap-x-6  px-4 py-4 shadow-sm sm:px-6 lg:hidden">
+            <div className="sticky top-0 z-40 flex items-center justify-between gap-x-6  px-4 py-4 shadow-sm sm:px-6 lg:hidden">
                 <button type="button" className="-m-2.5 p-2.5  lg:hidden" onClick={() => setSidebarOpen(true)}>
                     <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                 </button>
-
+                <a href="/login"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+                        </svg>
+                </a>
             </div>
 
         </>

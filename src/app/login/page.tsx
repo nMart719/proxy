@@ -9,10 +9,10 @@ interface PageProps {
   onButtonClick: (cmd: string) => void;
 }
 const Login: React.FC<PageProps> = () => {
-  const inputs = [{ label: 'Логiн', type: 'text' }, { label: 'Пароль', type: 'password' }, { label: 'Повторити пароль', type: 'password' }];
+  const inputs = [{ label: 'Логiн', type: 'text' }, { label: 'Пароль', type: 'password' }];
 
   return (
-    <StartForm name={'Реєстрацiя'} inputs={inputs} btnText={'Зареєструватися'} btnLink={'/dashboard/status'} spanText={'Вже маєте акаунт?'} linkText={'Увiйти'} link={'/login'}/>
+    <StartForm name={'Вхiд'} inputs={inputs} btnText={'Увiйти'} btnLink={'/dashboard/status'} spanText={'Нема акаунту?'} linkText={'Зареєструватися'} link={'/register'}/>
   )
 }
 

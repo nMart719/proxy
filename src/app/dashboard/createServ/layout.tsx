@@ -1,5 +1,5 @@
 'use client'
-import ManualModal from "../modals/Manual"
+import ManualModal from "../../modals/Manual"
 
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
