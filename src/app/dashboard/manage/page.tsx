@@ -10,7 +10,7 @@ const Manage: React.FC<PageProps> = () => {
   useEffect(() => {
     handleConnect();
   }, []);
-  
+
   const manualModal = useManual();
   console.log(manualModal);
   function handleConnect() {
@@ -61,7 +61,7 @@ const Manage: React.FC<PageProps> = () => {
         </div>
         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <div className="w-full flex ">
-            <button className="btn btn-secondary max-w-fit cursor-pointer">Покращити безпеку 
+            <button className="btn btn-secondary max-w-fit cursor-pointer">Покращити безпеку
             </button>
           </div>
           <dd className="description">Може вплинути на швидкiсть роботи та пiдключення</dd>
@@ -69,7 +69,7 @@ const Manage: React.FC<PageProps> = () => {
         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
 
           <div className="w-full flex ">
-            <button className="btn btn-secondary max-w-fit" onClick={()=>{manualModal.onOpen}}>Отримати iнструкцiю
+            <button className="btn btn-secondary max-w-fit" onClick={() => { manualModal.onOpen }}>Отримати iнструкцiю
             </button>
           </div>
           <dd className="description">Iнструкця пiдключення socks для вашої домашньої системи windows</dd>

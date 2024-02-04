@@ -21,7 +21,7 @@ const ManualModal = () => {
                         <form className="needs-validation novalidate">
                             <div className="row">
                                 <label className="form-label">Iнструкцiя</label>
-                                
+
                             </div>
                         </form>
                     </div>

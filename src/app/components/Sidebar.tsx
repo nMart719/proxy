@@ -84,7 +84,7 @@ export default function Sidebar() {
                                 >
                                     <div className="flex w-16 justify-center py-5 bg-blackColor">
                                         <button type="button" className="-m-2.5 p-2.5 'flex-row justify-between" onClick={() => setSidebarOpen(false)}>
-                                         <XMarkIcon className="h-6 w-6 " aria-hidden="true" />
+                                            <XMarkIcon className="h-6 w-6 " aria-hidden="true" />
                                         </button>
                                     </div>
                                 </Transition.Child>
@@ -119,7 +119,7 @@ export default function Sidebar() {
                 {/* Sidebar component, swap this element with another sidebar if you like */}
                 <div className="flex grow flex-col gap-y-5 overflow-y-auto  px-6">
                     <div className="flex flex-row h-16 shrink-0 justify-between items-end">
-                        <div className="font-bold text-3xl bg-gradient-to-b from-textColor to-borderColor text-transparent bg-clip-text">User</div>   
+                        <div className="font-bold text-3xl bg-gradient-to-b from-textColor to-borderColor text-transparent bg-clip-text">User</div>
                         <a href="/login" className='pb-1 hover:!bg-transparent text-textColor hover:text-borderColor '>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
@@ -162,8 +162,8 @@ export default function Sidebar() {
                     <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                 </button>
                 <a href="/login"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
-                        </svg>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+                </svg>
                 </a>
             </div>
 

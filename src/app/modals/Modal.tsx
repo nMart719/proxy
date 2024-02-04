@@ -1,5 +1,5 @@
-import React, {useRef} from 'react';
-import {Button, Modal as BootstrapModal} from 'react-bootstrap';
+import React, { useRef } from 'react';
+import { Button, Modal as BootstrapModal } from 'react-bootstrap';
 
 interface ModalProps {
     isOpen?: boolean;
@@ -19,21 +19,21 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({
-                                         isOpen,
-                                         onClose,
-                                         onSubmit,
-                                         title,
-                                         body,
-                                         actionLabel,
-                                         actionEnabled= true,
-                                         footer,
-                                         size,
-                                         disabled,
-                                         secondaryAction,
-                                         secondaryActionLabel,
-                                         onSecondaryAction,
-                                         withoutSubmit
-                                     }) => {
+    isOpen,
+    onClose,
+    onSubmit,
+    title,
+    body,
+    actionLabel,
+    actionEnabled = true,
+    footer,
+    size,
+    disabled,
+    secondaryAction,
+    secondaryActionLabel,
+    onSecondaryAction,
+    withoutSubmit
+}) => {
     // if onSecondaryAction is not provided, set it to onClose
     onSecondaryAction = onSecondaryAction || onClose;
     return (
@@ -44,19 +44,19 @@ const Modal: React.FC<ModalProps> = ({
 
             <BootstrapModal.Body>{body}</BootstrapModal.Body>
             {!withoutSubmit && (
-            <BootstrapModal.Footer>
+                <BootstrapModal.Footer>
 
-                <Button variant="primary" onClick={onSubmit} disabled={disabled || !actionEnabled}>
-                    {actionLabel}
-                </Button>
-
-                {secondaryAction && (
-                    <Button variant="secondary" onClick={onSecondaryAction} disabled={disabled}>
-                        {secondaryActionLabel}
+                    <Button variant="primary" onClick={onSubmit} disabled={disabled || !actionEnabled}>
+                        {actionLabel}
                     </Button>
-                )}
 
-            </BootstrapModal.Footer>
+                    {secondaryAction && (
+                        <Button variant="secondary" onClick={onSecondaryAction} disabled={disabled}>
+                            {secondaryActionLabel}
+                        </Button>
+                    )}
+
+                </BootstrapModal.Footer>
             )}
         </BootstrapModal>
     );

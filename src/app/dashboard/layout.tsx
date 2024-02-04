@@ -45,19 +45,19 @@ export default function RootLayout({
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [cmd, setCmd] = useState('');
-    useEffect(() => {
-      if (localStorage.getItem('cmd')) {
-        setCmd(localStorage.getItem('cmd') || '');
-      }
-      console.log(localStorage.getItem('cmd'))
-    })
+  useEffect(() => {
+    if (localStorage.getItem('cmd')) {
+      setCmd(localStorage.getItem('cmd') || '');
+    }
+    console.log(localStorage.getItem('cmd'))
+  })
   return (
     <>
-        <Sidebar />
-        <main className="py-10 lg:pl-72">
-          <div className="px-4 sm:px-6 lg:px-8">{children}</div>
-        </main>
-</>
+      <Sidebar />
+      <main className="py-10 lg:pl-72">
+        <div className="px-4 sm:px-6 lg:px-8">{children}</div>
+      </main>
+    </>
   );
 }
 

@@ -1,10 +1,9 @@
 "use client";
 
-import {useRouter} from "next/navigation";
-import {useEffect} from "react";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-export default function Home() {
-    // redirect to login page
+export default function Dashboard() {
     const router = useRouter();
     useEffect(() => {
         router.push('/status');
