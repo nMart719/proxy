@@ -128,7 +128,7 @@ a:hover {
 }
 
 .invalid-input input {
-  @apply border-redColor;
+  @apply border-redColor text-redColor;
 }
 
 .invalid-input input:placeholder-shown~label {

@@ -26,37 +26,37 @@ const Manage: React.FC<PageProps> = () => {
       <div className="border-t border-btnBorder">
         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 flex pt-[15px] items-center">
           <div className="w-full flex ">
-            <FormControl
-              label="Назва"
-              type="text"
-              isValid={true} />
+            <div className={`form-control`}>
+              <input type="text" placeholder="Назва" />
+              <label>Назва</label>
+            </div>
           </div>
           <dd className="description pt-[15px]">Назва вашого сервера</dd>
         </div>
         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <div className="w-full flex ">
-            <FormControl
-              label="IP адреса"
-              type="text"
-              isValid={true} />
+            <div className={`form-control`}>
+              <input type="text" placeholder="IP адреса" />
+              <label>IP адреса</label>
+            </div>
           </div>
           <dd className="description pt-[15px]">IP адреса вашого сервера</dd>
         </div>
         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <div className="w-full flex ">
-            <FormControl
-              label="Логiн"
-              type="text"
-              isValid={true} />
+            <div className={`form-control`}>
+              <input type="text" placeholder="Логiн" />
+              <label>Логiн</label>
+            </div>
           </div>
           <dd className="description pt-[15px]">Логiн для пiдключення до вашого сервера</dd>
         </div>
         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <div className="w-full flex ">
-            <FormControl
-              label="Пароль"
-              type="password"
-              isValid={true} />
+            <div className={`form-control`}>
+              <input type="text" placeholder="Пароль" />
+              <label>Пароль</label>
+            </div>
           </div>
           <dd className="description pt-[15px]">Пароль для пiдключення до вашого сервера</dd>
         </div>
