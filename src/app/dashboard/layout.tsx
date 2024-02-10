@@ -1,6 +1,6 @@
-"use client"
-import { Fragment, useEffect, useState } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
+"use client";
+import { Fragment, useEffect, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
   CalendarIcon,
@@ -10,9 +10,11 @@ import {
   HomeIcon,
   UsersIcon,
   XMarkIcon,
-} from '@heroicons/react/24/outline';
+} from "@heroicons/react/24/outline";
 // import '../globals.css'
-import Sidebar from '../components/Sidebar';
+import Sidebar from "../components/Sidebar";
+import { useSession } from "next-auth/react";
+
 type NavigationItem = {
   name: string;
   href: string;
@@ -29,13 +31,13 @@ type Team = {
 };
 
 const navigation: NavigationItem[] = [
-  { name: 'Статус', href: '/status', icon: HomeIcon, current: false },
-  { name: 'Керування', href: '/manage', icon: UsersIcon, current: false },
-  { name: 'Перевiрка IP', href: '/check', icon: FolderIcon, current: false },
+  { name: "Статус", href: "/status", icon: HomeIcon, current: false },
+  { name: "Керування", href: "/manage", icon: UsersIcon, current: false },
+  { name: "Перевiрка IP", href: "/check", icon: FolderIcon, current: false },
 ];
 
 function classNames(...classes: (string | boolean)[]): string {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function RootLayout({
@@ -44,20 +46,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [cmd, setCmd] = useState('');
+  const [cmd, setCmd] = useState("");
+  const { data: session } = useSession();
+
   useEffect(() => {
-    if (localStorage.getItem('cmd')) {
-      setCmd(localStorage.getItem('cmd') || '');
+    if (localStorage.getItem("cmd")) {
+      setCmd(localStorage.getItem("cmd") || "");
     }
-    console.log(localStorage.getItem('cmd'))
-  })
+    console.log(localStorage.getItem("cmd"));
+  });
   return (
     <>
-      <Sidebar />
+      <Sidebar username={session?.user.username || ""} />
       <main className="py-10 lg:pl-72">
         <div className="px-4 sm:px-6 lg:px-8">{children}</div>
       </main>
     </>
   );
 }
-

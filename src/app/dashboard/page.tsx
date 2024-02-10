@@ -6,7 +6,7 @@ import { useEffect } from "react";
 export default function Dashboard() {
     const router = useRouter();
     useEffect(() => {
-        router.push('/status');
+        router.push('/dashboard/status');
     }, []);
 }
 
