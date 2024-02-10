@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useSnackbar } from "notistack";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 interface PageProps {
   onButtonClick: (cmd: string) => void;
@@ -98,13 +99,13 @@ const Login: React.FC<PageProps> = () => {
             </div>
             <div className="w-full px-4 py-6 flex justify-center items-center">
               <span>
-                Нема акаунту?{" "}
-                <a
+                Нема акаунту?
+                <Link
                   href="/register"
                   className="text-borderColor hover:!bg-transparent"
                 >
                   Зареєструватися
-                </a>
+                </Link>
               </span>
             </div>
           </div>

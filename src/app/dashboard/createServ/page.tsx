@@ -222,12 +222,17 @@ const Manage: React.FC<PageProps> = () => {
               marginBottom: "10px",
             }}
           >
-            <p>ID: {proxy.id}</p>
             <p>Name: {proxy.name}</p>
             <p>IP: {proxy.ip}</p>
             <p>Login: {proxy.login}</p>
             <p>Password: {proxy.password}</p>
-            <button onClick={() => detele(proxy.id)}>Delete</button>
+            <button
+              style={{ width: 180, marginTop: "5px" }}
+              className="btn w-3/4"
+              onClick={() => detele(proxy.id)}
+            >
+              Delete
+            </button>
           </div>
         ))}
       </div>
